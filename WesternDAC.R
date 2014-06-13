@@ -30,7 +30,7 @@ oda.sum
 # plot data
 plot <- ggplot(oda.sum, aes(year, total.aid, colour=clm))
 plot <- plot + geom_line() + scale_x_continuous(breaks= pretty_breaks())
-plot <- plot + labs( x ='Year',  y = 'Total Aid (Western)')
+plot <- plot + labs( x ='Year',  y = 'Total Aid Western (thousand USD)')
 plot <- plot + scale_color_discrete(name = "Coalition of \nlike minded states", labels = c('Non-members', 'Members') )
 print(plot)
 
