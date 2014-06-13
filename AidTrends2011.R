@@ -28,8 +28,8 @@ rm(amount)
 # add clm variable
 clm.list <- c('Czech Republic', 'Denmark', 'Finland', 'Germany', 'Luxembourg', 'Netherlands', 'Norway', 'Sweden', 'Switzerland', 'Iceland')
 pol.strat.list <- c('Canada', 'European Commission Humanitarian Aid Office', 'United States of America', 'UNICEF National Committee/United Kingdom', 'UNICEF National Committee/Ireland')
-ocha$donor.type <- ifelse(ocha$donor %in% clm.list, 'clm',
-                          ifelse(ocha$donor %in% pol.strat.list, 'polstrat', 'other'
+ocha$donor.type <- ifelse(ocha$donor %in% clm.list, 'CLM',
+                          ifelse(ocha$donor %in% pol.strat.list, 'PoliticalStrategic', 'Other'
                             )
                           ) 
 
