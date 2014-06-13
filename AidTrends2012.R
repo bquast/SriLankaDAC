@@ -3,17 +3,12 @@
 # bquast@gmail.com
 
 # load packages
-library(plm)
 library(plyr)
 library(ggplot2)
 library(scales)
 
 # load the data
 ocha <- read.csv('ocha_R4_A963___1406131346.csv', sep=';')
-
-# inspect the data
-View(ocha)
-str(ocha)
 
 # rename to lowercase
 names(ocha) <- tolower(names(ocha))
