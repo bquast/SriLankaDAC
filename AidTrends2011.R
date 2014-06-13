@@ -3,7 +3,6 @@
 # bquast@gmail.com
 
 # load packages
-library(plm)
 library(plyr)
 library(ggplot2)
 library(scales)
@@ -11,13 +10,8 @@ library(scales)
 # load the data
 ocha <- read.csv('ocha_R4_A924___1406131346.csv', sep=';')
 
-# inspect the data
-View(ocha)
-str(ocha)
-
 # rename to lowercase
 names(ocha) <- tolower(names(ocha))
-ocha$funding...usd
 
 # numeric donation
 amount <- ocha$funding...usd
