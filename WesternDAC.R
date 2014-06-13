@@ -18,7 +18,7 @@ View(western.aid)
 oda <- subset(western.aid, Aid.type == 'ODA: Total Net' & Amount.type == 'Constant Prices (2012 USD millions)')
 names(oda) <- tolower(names(oda))
 
-# create a coalition of like minded dummy
+# create a coalition-of-like-minded dummy variable
 clm.list <- c('Denmark', 'Finland', 'Germany', 'Luxembourg', 'Netherlands', 'Norway', 'Sweden', 'Switzerland', 'Iceland')
 oda$clm <- ifelse(oda$donor %in% clm.list, TRUE, FALSE)
 save(oda, file = 'oda.RData' )
@@ -30,6 +30,8 @@ oda.sum
 # plot data
 plot <- ggplot(oda.sum, aes(year, total.aid, colour=clm))
 plot <- plot + geom_line() + scale_x_continuous(breaks= pretty_breaks())
+plot <- plot + labs( x ='Year',  y = 'Total Aid (Western)')
+plot <- plot + scale_color_discrete(name = "Coalition of \nlike minded states", labels = c('Non-members', 'Members') )
 print(plot)
 
 # create image file
